@@ -1,0 +1,223 @@
+/*określenie kolorów używanych na stronie*/
+:root{
+    --dark: #1b1b1b;
+    --black: #0b0b0b;
+    --white: white;
+}
+
+/*określenie sekcji body*/
+body {    
+    display: block;
+    width: 99vw;
+    height: 98vh;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/*nadanie czcionki na stronie*/
+html{
+    font-family: "Poppins";
+}
+
+/*główny div z treścią*/
+.main_content{
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(4px);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*div, kóry wyświetla się nadrzednie w divie głównym, który emituje szkło*/
+.powitanie{
+    margin: 0 auto;
+    width: 75%;
+    height: 75%;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    display: block;
+}
+
+/*sekcja stylizowania menu bar*/
+ul{
+    width: 94%;
+    list-style-type: none;
+    margin-left: 3%;
+    margin-right: auto;
+    padding: 6px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    outline-style: solid;
+    color: white;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+li{
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    align-items: center;
+    color: white;
+    margin: 0 23px;
+    
+}
+
+ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+
+/*określenie podkreślenia po zjechaniu z linku kursora*/
+ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: 0.15s ease-in-out;
+}
+
+/*wysuwanie podkreslenia po najechaniu kursora na link*/
+ul li a:hover:after {
+    width: 100%;
+}
+
+/*styl nagłówka z hasłami sklepu*/
+h1{
+    overflow: hidden;
+    position: relative;
+    text-shadow: black 0.1em 0.1em 0.2em;
+
+}
+
+/*hasło sklepu gorna czesc*/
+.gora{
+    position: absolute;
+    top: 10%;
+    background-color: rgba(0, 0, 0, 0.50);
+	border-radius: 20px;
+}
+
+/*hasło sklepu dolna czesc*/
+.dol{
+    position: absolute;
+    top: 70%;
+    background-color: rgba(0, 0, 0, 0.50);
+	border-radius: 20px;
+}
+
+/*styl do paragrafu "do jakiej sekcji"*/
+.sekcja{
+    text-shadow: black 0.1em 0.1em 0.2em;
+    position: absolute;
+    text-align: center;
+}
+
+/*szerokośc zdjęcia za szkłem*/
+.bg_img {
+    position: absolute;
+    width: 99vw;
+    height: 98vh;
+    border-radius: 20px;
+}
+
+/*logo sklepu pozycja*/
+.logo_img{
+    position: absolute;
+}
+
+/*div z całą sekcją naiwgacji i określenie pozycji*/
+.navigation{
+    position: absolute;
+    width: 100%;
+}
+/*określenie rozmiarów elementów w różnych rozdzielczościach*/
+@media screen and (max-width: 1360px){
+    ul {
+        display: inline-block;
+        width: 85%;
+    	margin-left: 1%;
+    	margin-right: 1%;
+    }
+
+    .logo_img{
+        width: 75%;
+        height: auto;
+    }
+	
+	.main_content {
+		margin-right: 1%;
+	}
+}
+
+@media screen and (max-width: 1920px){
+    .dol{
+        top: 85%;
+        width: 100%;
+    }
+
+    .gora{
+        top: 3%;
+        width: 100%;
+    }
+
+    .logo_img{
+        height: 35%;
+        top: 50%;
+        width: 100%;
+    }
+
+    .sekcja {
+        top: 20%;
+        width: 100%;
+    }
+
+    .navigation{
+        top: 30%;
+    }
+
+}
+
+@media screen and (max-width: 863px){
+.logo_img{
+display: none;
+}
+
+.sekcja{
+top: 10%;
+}
+
+}
+
+@media screen and (max-width: 1100px){
+.gora{
+display: none;
+}
+.dol{
+display: none;
+}
+}
